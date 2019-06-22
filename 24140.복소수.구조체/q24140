@@ -1,0 +1,15 @@
+하나의 복소수는 실수부 값과 허수부 값으로 나타낼 수 있다.
+입력시에는 실수부 값과 허수부 값을 순서대로 받는다.
+
+typedef struct complex{
+    double re, im;  // 실수부(real)와  허수부(imaginary)
+} complex;
+
+두개의 복소수를 더하는 (실수부끼리, 허수부끼리) 함수 
+complex c_add(complex c1, complex c2); 를 구현한다.
+
+모양 좋게 출력하는 함수 (2.0 + 3.2i 형식) 
+void print_c(complex c); 를 구현한다.
+
+테스트: 두개의 복소수 값을 입력하고 c_add를 이용하여 두 복소수를 더한 다음 
+print_c를 이용하여 이 복소수를 출력. 
