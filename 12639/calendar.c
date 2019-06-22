@@ -80,39 +80,77 @@ int main(int ac, char *av[])
 	
 	printf("이번 해의 1월~%d월까지 총 일수: %d\n\n", month, total_this_sum);
 
-	printf("Sun Mon Tue Wed Thu Fri Sat Sun");
-	printf("\n=============================\n");
-
 	yoil = (total_last_sum + total_this_sum) % 7;
+ 84
+ 85     printf("요일: %d (0=일,1=월,2=화, .. , 6=토)\n\n", yoil);
+ 86
+ 87     printf("Sun\tMon\tTue\tWed\tThu\tFri\tSat");
+ 88     printf("\n====================================================\n");
+ 89
+ 90
+ 91     for( int k = 0  ; k < 7 ; k++)
+ 92     {
+ 93         if(yoil == k)
+ 94         {
+ 95             for( int m = 1 ; m <= k ; m++)
+ 96             {
+ 97                 printf("\t");
+ 98             }
+ 99         }
+100     }
+101
+102
+103     if(month == 2)
+104     {
+105         for( int i = 1 ; i <= 28; i++)
+106         {
+107             printf("%d\t", i);
+108
+109             yoil++;
+110
+111             if( yoil == 7)
+112             {
+113                 printf("\n");
+114                 yoil %= 7;
+115             }
+116
+117         }
+118     }
 	
-	if( yoil == 0 )
-	{
+	else if ( month == 1 || month == 3 || month == 5 ||
+121               month == 7 || month == 8 || month == 10 ||
+122               month == 12)
+123     {
+124
+125         for( int i = 1; i <= 31; i++)
+126         {
+127             printf("%d\t", i);
+128             yoil++;
+129
+130             if( yoil == 7 )
+131             {
+132                 printf("\n");
+133                 yoil %= 7;
+134             }
+135         }
+136     }
+137
+138     else
+139     {
+140         for( int i = 1; i <= 30; i++)
+141         {
+142
+143             printf("%d\t", i);
+144
+145             yoil++;
+146
+147             if( yoil == 7)
+148             {
+149                 printf("\n");
+150                 yoil %= 7;
+151             }
+152         }
+153     }
+154
+155     printf("\n");
 
-	}
-
-	else if( yoil == 1 )
-	{
-		printf("\t");
-	}
-
-	else if( yoil == 2 )
-	{
-		printf("\t\t");
-	}
-	else if( yoil == 3 )
-	{
-		printf("\t\t\t");
-	}
-	else if( yoil == 4 )
-	{
-		printf("\t\t\t\t");
-	}
-	else if( yoil == 5 )
-	{
-		printf("\t\t\t\t\t");
-	}
-	else if( yoil == 6 )
-	{
-		printf("\t\t\t\t\t\t");
-	}
-}
