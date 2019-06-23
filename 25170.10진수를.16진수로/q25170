@@ -1,0 +1,16 @@
+scanf 로 십진 정수 하나를 읽어서 integer를 hexadecimal 형태로 출력한다. 
+출력 예: ABCD1234
+단 printf 로 출력하는 것이 아니고 비트 연산을 통해서 한 글자, 한글자 출력해야한다.
+
+int 는 총 8개의 nibble(4비트)로 되어 있다.
+첫 nibble은 mask 를 0xf0000000 로 해서 & 한 후 우측으로 28bit를 shift하면 된다. 
+(주의: mask는 int가 아니고 반드시 unsigned int로 선언해야한다)
+다음 nibble은 mask를 우측으로 4비트 shift하면 0x0f000000가 되어 이 mask로
+bitwise and ( & )한 후 24 bit만큼 shift하면 값이 나온다.
+출력시에는 이 값(0~15)을 0,1,...9,A,B,..,F 로 인쇄하면 되는데 
+이는 숫자를 x 라고 할때 putchar(hexname[x]); 하면 출력할 수 있다.
+여기서 char hexname[17]="0123456789ABCDEF";
+(물론 if/else로 16경우를 나누어 출력할 수도 있으나 비효율적이다)
+
+예시: 입력이 255이면  FF 로 출력 (앞의 0이 출력되지 않도록 하며 입력이 0인 경우만 0으로 출력)
+입력이 305441741 이면 출력은  1234ABCD 가 됨.
