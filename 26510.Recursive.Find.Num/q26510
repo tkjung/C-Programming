@@ -1,0 +1,18 @@
+1차원 정수 배열과 또하나의 정수를 파라메터로 받아서 배열가운데 이 정수와 같은 수가 있는지
+알아내는 재귀함수 find를 만들어본다.
+
+int find(int data[], int size, int needle); 과 같은 prototype을 가지며
+size는 배열의 크기이고 needle은 찾는 정수이다. 
+있으면 1을, 없으면 0을 반환한다.
+
+Hint: 마지막 요소가 needle과 같으면 바로 1을 반환하면 된다. 아니면
+하나 작은 크기로 재귀호출한 답을 돌려주면 된다.
+
+int data[10] = { 1,3,6,7,9, 11,12,13,16,17 };
+int needle;
+scanf("%d", &needle);
+if ( find(data, 10, needle) ){
+   printf("Yes\n");
+} else {
+   printf("No\n");
+}
