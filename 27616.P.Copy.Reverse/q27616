@@ -1,0 +1,11 @@
+[포인터를 이용하여 역스트링 복사]
+
+주어진 스트링의 역스트링을 다른 배열에 저장하는 함수 rstrcpy 를 작성하라.
+단, 함수 내에서는 배열 기호를 사용하지 않는다.
+
+char org[100]; 
+char cpy[100];
+scanf("%s", org);
+rstrcpy(cpy, org);
+printf("%s %s\n", org, cpy);   
+         // 원래 스트링이 abcdefg 였다면 abcdefg gfedcba 가 출력되어야 한다.
