@@ -1,0 +1,11 @@
+[포인터를 이용하여 스트링 복사]
+
+포인터 연산을 이용하여 스트링을 복사하는 mystrcpy 함수를 만든다.
+함수에서는 배열 기호를 사용하면 안되며 strcpy함수를 사용하지 않는다.
+
+main:
+char org[100];
+char cpy[100];
+scanf("%s", org);
+mystrcpy(cpy, org);
+printf("%s\n", cpy);
