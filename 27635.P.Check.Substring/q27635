@@ -1,0 +1,21 @@
+[포인터를 이용하여 substring 여부 확인]
+
+두개의 스트링을 haystack과 needle 이라고 할 때, haystack의 substring으로서 needle이 있는지를 확인하여
+있으면 1을, 없으면 0을 돌려주는 함수 find_str 을 작성하라.
+포인터 연습과제이므로 배열기호를 쓰지 않고 포인터를 이용한다. 또한 스트링을 다루는 라이브러리 함수를 사용하지 않는다.
+* substring이란 어느 스트링의 연속된 일부분을 말한다.
+* 따라서 bcd 는 abcdef 의 substring 이다.
+* ace 는 abcdef 의 substring 이 아니다
+
+프로토타입: int find_str(char * haystack, char * needle);
+
+char one[100]; 
+char two[20];
+
+while ( scanf("%s %s", one, two) == 2 ){
+    if (find_str(one, two)==1){
+        printf("있음\n");
+    } else {
+        printf("없음\n");
+    }
+}
