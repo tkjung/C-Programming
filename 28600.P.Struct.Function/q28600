@@ -1,0 +1,18 @@
+[ 구조체를 만들어 돌려주는 함수 ]
+
+struct stu{
+    int id;
+    char name[20];
+    float gpa;
+} ;
+
+위와 같은 구조체가 있다. 표준 입력에서 구조체를 만들고 입력하기 위한 함수 
+getStudent를 정의하라.
+
+struct stu * kim;
+kim = getStudent();
+printStudent(kim);  // 학번, 이름, 평점을 출력하는 함수를 작성하라.
+
+힌트:
+prototype은 :  struct stu * getStudent();
+함수 내에서 포인터를 이용하여 동적할당을 받고 내용을 채운 다음 포인터를 돌려주면 된다.
