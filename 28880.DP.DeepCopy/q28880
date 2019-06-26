@@ -1,0 +1,22 @@
+[구조체의 깊은 복사]
+
+struct employee {
+  char *name;     // 이름의 최대 길이는 200바이트로 한다.
+  char id[15];    // 주민번호 "-"포함
+  char dept_code;  // 부서 코드. 1에서 100사이  정수.
+};
+위와 같은 구조체 모양이 있을 때 struct employee 포인터를 받아서 1개의 데이터를 입력하는 함수
+get_employee와 깊은 복사된 사본을 만들어주는 함수 copy_employee 를 만들라.
+
+용례:
+
+struct employee *ep1, *ep2;
+ep1 = get_employee();
+ep2 = copy_employee(ep1);
+print_employee(ep1);
+print_employee(ep2);
+ep1->name[0] = 'A';  // 첫 글자를 'A로 바꿔준다.
+print_employee(ep1);
+print_employee(ep2);
+
+테스트시에는 영문으로만 테스트한다. (그래야 결과가 보이니까)
