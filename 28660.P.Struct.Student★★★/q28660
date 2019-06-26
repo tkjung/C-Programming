@@ -1,0 +1,34 @@
+주어진 데이터 파일(student.data)처럼 학생 수와 학생 데이터가 들어 있을 때,
+아래와 같은 구조를 가진 학생 목록 구조체에(물론 동적할당 필요)
+ 데이터를 입력해서 돌려주는 함수 getStuList 를 작성하라.
+
+전체를 아우르는 구조체 생김새:
+struct stlist{
+    int numStu;  // 학생 수
+    stu_t **stulist;  // 동적 할당을 받은 학생 구조체들을 가리키는 포인터 배열로 사용.
+};
+
+(여기서 stu_t 는 struct student 를 typedef한 것임.)
+
+프로토타입은 
+struct stlist * getStuList( ); 
+
+main에서는:
+
+struct stlist * theStList;
+theStList = getStuList( );
+printAll(theStList);
+sort(theStList);  // 이름을 기준으로 오름차순 정렬
+printAll(theStList);
+
+getStuList(..) 함수 안에서는  
+처음에 학생 수를 읽어들인 다음 필요한 만큼 포인터 배열을 동적할당하고, 
+getStudent 함수를 호출하여 각각의 학생 데이터를 입력하게 한다.
+각 학생의 이름은 최대 200바이트(null-termination포함)를 넘지 않는 것으로 가정하되,
+동적할당으로 최소 메모리만 사용한다.
+
+getStudent의 프로토타입은 다음과 같다.
+stu_t * getStudent();  // 학생 한명의 데이터를 만들어 준다.
+
+* 학생 데이터는 이름, 학번, 학년입니다.
+
