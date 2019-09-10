@@ -35,12 +35,12 @@ int getSize( int *pStu, int *pCourse )
 		return 1;
 	}
 
-	else if ( numStu2 == EOF || numCourse2 == EOF ) // 학생수=EOF가 되면 0을 돌려줌으로써 종료
+	else if ( numStu2 == EOF || numCourse2 == EOF ) // 학생수=EOF가 되면, 0을 돌려줌으로써 종료
 	{
 		return 0;
 	}
 
-	else  // 학생수 = 숫자가 아닌 문자
+	else  // 학생수=숫자가 아닌 문자가 되면, 0을 돌려줌으로써 종료
 	{
 		return 0;
 	}
