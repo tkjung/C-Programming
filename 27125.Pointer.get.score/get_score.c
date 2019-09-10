@@ -12,7 +12,7 @@ int getSize( int *pStu, int *pCourse )
 	scanf("%d", &numCourse2 );
 
 
-	// 학생수= 1 ~ 100명, 과목수= 1 ~ 10명
+	// 학생수= 1 ~ 100명, 과목수= 1 ~ 10개
 	if (  (1 <= numStu2 && numStu2 <= 100) && ( 1 <= numCourse2 && numCourse2 <= 10 ) ) 
 	{
 		*pStu = numStu2;
