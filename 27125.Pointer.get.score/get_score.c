@@ -42,16 +42,7 @@ int getSize( int *pStu, int *pCourse )
 
 	else  // 학생수 = 숫자가 아닌 문자
 	{
-		printf("틀렸습니다.\n다시 학생수를 입력하세요: ");
-		scanf("%d", &numStu2 );  
-		
-		printf("과목 수를 입력하세요: ");
-		scanf("%d", &numCourse2 );
-		
-		*pStu = numStu2;
-		*pCourse = numCourse2; 
-		
-		return 1;
+		return 0;
 	}
 }
 
